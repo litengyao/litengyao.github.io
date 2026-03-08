@@ -1,1 +1,1 @@
-123
+The site is a place for us to share our research progresses.
