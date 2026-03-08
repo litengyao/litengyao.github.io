@@ -44,9 +44,9 @@ const formatDate = (dateStr: string) => {
       
       <!-- Header -->
       <div class="text-center mb-12">
-        <h1 class="text-4xl md:text-5xl font-extrabold text-slate-900 mb-4">News & Updates</h1>
+        <h1 class="text-4xl md:text-5xl font-extrabold text-slate-900 mb-4">News</h1>
         <p class="text-lg text-slate-600 max-w-2xl mx-auto">
-          Stay up to date with my latest research publications, conference talks, awards, and other activities.
+          Stay up to date with our latest research publications, conference talks, awards, and other activities.
         </p>
       </div>
 

@@ -16,50 +16,16 @@ export function useProjects() {
       projects.value = [
         {
           id: 1,
-          title: "NeuroVision: Real-time Brain-Computer Interface",
-          description: "A low-latency BCI system using EEG signals to control robotic arms with deep learning.",
-          longDescription: "NeuroVision is a cutting-edge Brain-Computer Interface (BCI) system designed to translate EEG signals into robotic control commands in real-time. By leveraging a novel Transformer-based architecture, we achieved a latency of under 50ms, enabling smooth and intuitive control. The system was tested on 20+ subjects and demonstrated a 95% accuracy in command recognition.",
-          image: "https://images.unsplash.com/photo-1555255719-0a8f4666395b?auto=format&fit=crop&q=80&w=800", // 示例图
-          tags: ["PyTorch", "EEG", "Robotics", "Transformers"],
+          title: "ADS-B Attack Data Generator",
+          description: "Generate ADS-B Attack Data for Classical Attack Patterns",
+          longDescription: "The scripts are designed to reproduce the data disruptions for ADS-B data attack, which are the simulation codes for the paper 'Threat Model and Construction Strategy on ADS-B Attack Data'.",
+          image: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&q=80&w=800", // 示例图
+          tags: ["ADS-B", "Data", "Air Traffic"],
           link: "#",
-          github: "https://github.com/sanzhang/neurovision",
-          status: "Active",
-          year: 2024,
-          stars: 128
-        },
-        {
-          id: 2,
-          title: "EcoScan: AI for Environmental Monitoring",
-          description: "Computer vision pipeline for analyzing satellite imagery to detect deforestation and wildfires.",
-          longDescription: "EcoScan automates the detection of environmental changes using multi-spectral satellite imagery. Our model segments forest cover and identifies early signs of wildfires or illegal logging activities. It processes terabytes of data daily and provides alerts to conservation agencies.",
-          image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=800",
-          tags: ["Computer Vision", "Satellite Imagery", "Python", "AWS"],
-          link: "https://ecoscan.demo.com",
-          github: "https://github.com/sanzhang/ecoscan",
-          status: "Completed",
-          year: 2023,
-          stars: 85
-        },
-        {
-          id: 3,
-          title: "FastRender: Neural Radiance Fields Acceleration",
-          description: "Optimized implementation of NeRF for real-time rendering on consumer GPUs.",
-          longDescription: "This project focuses on accelerating Neural Radiance Fields (NeRF) training and inference. By introducing a sparse voxel grid structure and custom CUDA kernels, we reduced training time by 10x and achieved 60 FPS rendering on an RTX 3090.",
-          image: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&q=80&w=800",
-          tags: ["CUDA", "C++", "NeRF", "Graphics"],
-          github: "https://github.com/sanzhang/fastnerf",
-          status: "Active",
-          year: 2024,
-          stars: 342
-        },
-        {
-          id: 4,
-          title: "ScholarMatch: Academic Collaboration Platform",
-          description: "A recommendation system connecting researchers based on publication history and interests.",
-          tags: ["React", "Node.js", "Graph Neural Networks", "Neo4j"],
-          link: "#",
+          github: "https://github.com/litengyao/adsb-attack-data-generator",
           status: "Archived",
-          year: 2022
+          year: 2020,
+          stars: 8
         }
       ]
       

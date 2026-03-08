@@ -2,8 +2,11 @@
 import { ref, computed } from 'vue'
 import { marked } from 'marked'
 import yaml from 'js-yaml'
+// 1. 引入 highlight.js 核心
+import hljs from 'highlight.js'
+// 2. 引入 GitHub 浅色风格 CSS (如果想用深色，改为 'github-dark.css')
+import 'highlight.js/styles/github.css' 
 
-// 假设你有这个类型定义，如果没有可以暂时注释掉或定义为 any
 import type { BlogPost } from '@/types' 
 
 interface Frontmatter {
@@ -16,9 +19,25 @@ interface Frontmatter {
   excerpt?: string
 }
 
-// 【关键修改】
-// 1. 使用 ?raw 获取原始字符串
-// 2. import: 'default' 确保获取的是文件内容字符串
+// 配置 marked 使用 highlight.js
+marked.setOptions({
+  highlight: function (code, lang) {
+    // 如果指定了语言且 highlight.js 支持该语言
+    if (lang && hljs.getLanguage(lang)) {
+      try {
+        // 返回高亮后的 HTML
+        return hljs.highlight(code, { language: lang }).value
+      } catch (e) {
+        console.warn('Highlight error:', e)
+      }
+    }
+    // 如果没有指定语言或出错，返回转义后的纯文本（防止 XSS）
+    return hljs.highlightAuto(code).value
+  },
+  // 可选：让代码块包裹在带有 class="hljs" 的 pre 标签中，方便 CSS 定位
+  renderer: new marked.Renderer() // 保持默认渲染器，highlight 选项会自动生效
+})
+
 const mdModules = import.meta.glob<string>(
   '/src/content/blog/*.md', 
   { eager: true, query: '?raw', import: 'default' }
@@ -27,7 +46,6 @@ const mdModules = import.meta.glob<string>(
 const parseMdFile = (raw: string, path: string): { frontmatter: Frontmatter; content: string } | null => {
   const lines = raw.split('\n')
   
-  // 检查是否以 --- 开头
   if (!lines.length || !lines[0]?.trim().startsWith('---')) {
     return { frontmatter: {}, content: raw }
   }
@@ -40,7 +58,6 @@ const parseMdFile = (raw: string, path: string): { frontmatter: Frontmatter; con
     }
   }
 
-  // 如果没有结束的 ---，则视为没有 frontmatter
   if (endIndex === -1) {
     return { frontmatter: {}, content: raw }
   }
@@ -55,7 +72,7 @@ const parseMdFile = (raw: string, path: string): { frontmatter: Frontmatter; con
       frontmatter = parsed as Frontmatter
     }
   } catch (e) {
-    console.warn(`Failed to parse frontmatter for ${path}:`, e)
+    console.warn(`Failed to parse frontmatter for  $ {path}:`, e)
   }
 
   return { frontmatter, content }
@@ -72,18 +89,16 @@ const parsePosts = (): BlogPost[] => {
 
     const { frontmatter, content } = parsed
 
-    // 如果明确标记为未发布，则跳过
     if (frontmatter.published === false) return
 
     const slug = path.split('/').pop()?.replace('.md', '') || ''
     
-    // 解析 Markdown 为 HTML
+    // 【关键】这里调用 marked(content) 时，会自动触发上面配置的 highlight 函数
     const htmlContent = marked(content) as string
 
-    // 生成摘要
     let excerpt = frontmatter.excerpt || ''
     if (!excerpt) {
-      const textOnly = content.replace(/[#*_`[\]]/g, '').split('\n').filter(l => l.trim()).join(' ')
+      const textOnly = content.replace(/[#*_`[ $  ]/g, '').split('\n').filter(l => l.trim()).join(' ')
       excerpt = textOnly.slice(0, 200) + (textOnly.length > 200 ? '...' : '')
     }
 
@@ -101,7 +116,6 @@ const parsePosts = (): BlogPost[] => {
     })
   })
 
-  // 按日期排序
   return posts.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
 }
 
@@ -149,9 +163,6 @@ export function useBlog() {
     searchQuery,
     selectedTag,
     getPostBySlug,
-    refresh: () => {
-      // 如果需要热更新触发重新解析，可以在这里添加逻辑
-      // 但 import.meta.glob eager 通常在保存时自动刷新
-    }
+    refresh: () => {}
   }
 }

@@ -73,7 +73,7 @@ const getStatusColor = (status: string) => {
           Projects
         </h1>
         <p class="text-lg text-slate-600 max-w-2xl mx-auto">
-          A collection of my research prototypes, open-source tools, and creative experiments.
+          A collection of our research prototypes, open-source tools, and creative experiments.
         </p>
       </div>
 
@@ -212,11 +212,11 @@ const getStatusColor = (status: string) => {
               </a>
               <a 
                 v-if="project.link" 
-                :href="project.link" 
-                target="_blank"
+                :href="project.link" target="_blank"
                 @click.stop
-                class="flex items-center gap-1 text-slate-500 hover:text-accent text-sm transition-colors"
-              >
+                @click.prevent="project.link === '#' ? null : void 0"
+                :class="{ 'pointer-events-none opacity-50 cursor-not-allowed': project.link === '#' }"
+                class="flex items-center gap-1 text-slate-500 hover:text-accent text-sm transition-colors">
                 <GlobeAltIcon class="w-4 h-4" /> Demo
               </a>
             </div>
@@ -302,6 +302,8 @@ const getStatusColor = (status: string) => {
               v-if="activeProject.link" 
               :href="activeProject.link" 
               target="_blank"
+              @click.prevent="activeProject.link === '#' ? null : void 0"
+              :class="{ 'pointer-events-none opacity-50 cursor-not-allowed': activeProject.link === '#' }"
               class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-accent text-white font-medium hover:bg-accent-hover transition-colors"
             >
               <GlobeAltIcon class="w-5 h-5" /> Live Demo

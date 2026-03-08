@@ -16,7 +16,7 @@ const navLinks: NavItem[] = [
   { name: 'About', path: '/about' }
 ]
 
-const email: string = "san.zhang@example.edu.cn"
+const email: string = "litengyao@aliyun.com"
 
 const handleScroll = (): void => {
   isScrolled.value = window.scrollY > 10
@@ -38,7 +38,7 @@ onUnmounted(() => window.removeEventListener('scroll', handleScroll))
           <div class="p-1.5 bg-accent/10 rounded-lg group-hover:bg-accent/20 transition-colors">
             <AcademicCapIcon class="w-6 h-6 text-accent" />
           </div>
-          <span>SZ</span>
+          <span>Our Research Page</span>
         </router-link>
 
         <div class="hidden md:flex items-center gap-1">
@@ -94,7 +94,7 @@ onUnmounted(() => window.removeEventListener('scroll', handleScroll))
 
     <footer class="bg-white border-t border-slate-200 py-8 mt-12">
       <div class="max-w-6xl mx-auto px-6 text-center text-sm text-slate-500">
-        <p>&copy; 2026 San Zhang. Built with Vue 3, TS & Tailwind CSS v4.</p>
+        <p>&copy; 2026 Tengyao Li. Built with Qwen3.5-Plus based on Vue 3, TS & Tailwind CSS v4.</p>
       </div>
     </footer>
   </div>

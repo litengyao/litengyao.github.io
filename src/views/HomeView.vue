@@ -39,10 +39,10 @@ const formatDate = (dateStr: string) => {
         <div class="inline-flex items-center justify-center p-4 bg-accent/10 rounded-2xl mb-8 shadow-inner animate-bounce-slow" aria-hidden="true">
           <AcademicCapIcon class="w-16 h-16 text-accent" />
         </div>
-        <h1 class="text-5xl md:text-7xl font-extrabold text-slate-900 tracking-tight mb-6">San Zhang</h1>
+        <h1 class="text-5xl md:text-7xl font-extrabold text-slate-900 tracking-tight mb-6">Learn / Smile / Enjoy</h1>
         <p class="text-xl md:text-2xl text-slate-600 max-w-3xl mx-auto leading-relaxed mb-10">
-          Ph.D. Candidate @ <span class="font-semibold text-slate-800">University of AI Research</span>.<br class="hidden md:block" />
-          Focusing on <span class="text-accent font-medium">Deep Learning</span>, <span class="text-accent font-medium">Computer Vision</span>, and <span class="text-accent font-medium">Scientific Computing</span>.
+          Researchers @ <span class="font-semibold text-slate-800">Active Tracker Group</span>.<br class="hidden md:block" />
+          Focusing on <span class="text-accent font-medium">Network Active Defense</span>, <span class="text-accent font-medium">Information Spread Dynamics</span>, and <span class="text-accent font-medium">Unmanned System Security</span>.
         </p>
         <div class="flex flex-col sm:flex-row justify-center gap-4 sm:gap-6">
           <router-link to="/publications" class="group px-8 py-4 rounded-xl bg-accent text-white font-semibold hover:bg-accent-hover shadow-lg shadow-accent/25 transition-all hover:-translate-y-1 flex items-center justify-center gap-2 focus:ring-2 focus:ring-accent focus:ring-offset-2">

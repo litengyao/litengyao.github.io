@@ -2,13 +2,13 @@
 import { UserCircleIcon, AcademicCapIcon, BriefcaseIcon, HeartIcon } from '@heroicons/vue/24/outline'
 
 const education = [
-  { degree: "Ph.D. in Computer Science", school: "University of AI Research", year: "2023 - Present", desc: "Focus on Deep Learning efficiency." },
-  { degree: "M.S. in Data Science", school: "Tech Institute", year: "2021 - 2023", desc: "Thesis on Computer Vision applications." },
-  { degree: "B.S. in Mathematics", school: "Science University", year: "2017 - 2021", desc: "Graduated with Honors." }
+  { degree: "Ph.D. in Cyberspace Security", school: "--", year: "2017 - 2020", desc: "Focus on ADS-B Security." },
+  { degree: "M.S. in Computer Science", school: "--", year: "2014 - 2016", desc: "Focus on Cloud Computing." },
+  { degree: "B.S. in Computer Science", school: "--", year: "2010 - 2014", desc: "Focus on Cloud Computing." }
 ]
 
 const skills = [
-  "Python", "PyTorch", "TensorFlow", "TypeScript", "Vue.js", "Node.js", "CUDA", "Docker", "AWS"
+  "Network Flow Watermarking", "Website Fingerprinting", "Flow Correlation"
 ]
 </script>
 
@@ -21,8 +21,7 @@ const skills = [
       </div>
       <h1 class="text-4xl font-bold text-slate-900 mb-4">About Me</h1>
       <p class="text-lg text-slate-600 leading-relaxed max-w-2xl mx-auto">
-        Hello! I'm a researcher passionate about bridging the gap between theoretical AI and practical scientific applications. 
-        When I'm not training models, you can find me hiking, reading sci-fi, or brewing specialty coffee.
+        Hello! I am an associate professor in Active Tracker Group, which is a research group in our university. In our group, there are many lovely students. We enjoy researches and devote in some interesting scientific problems. I hope we can do some useful work ^_^
       </p>
     </div>
 
@@ -50,7 +49,7 @@ const skills = [
       <div>
         <h2 class="text-2xl font-bold text-slate-900 mb-6 flex items-center gap-2">
           <BriefcaseIcon class="w-6 h-6 text-accent" />
-          Technical Skills
+          Technical Methods
         </h2>
         <div class="flex flex-wrap gap-2 mb-8">
           <span 
@@ -69,15 +68,15 @@ const skills = [
         <ul class="space-y-2 text-slate-600">
           <li class="flex items-center gap-2">
             <span class="w-1.5 h-1.5 bg-accent rounded-full"></span>
-            Efficient Deep Learning Architectures
+            Network Active Defense
           </li>
           <li class="flex items-center gap-2">
             <span class="w-1.5 h-1.5 bg-accent rounded-full"></span>
-            AI for Scientific Discovery
+             Information Spread Dynamics
           </li>
           <li class="flex items-center gap-2">
             <span class="w-1.5 h-1.5 bg-accent rounded-full"></span>
-            Open Source Software Development
+            Unmanned System Security
           </li>
         </ul>
       </div>
@@ -87,7 +86,7 @@ const skills = [
     <div class="mt-16 text-center p-8 bg-accent/5 rounded-2xl border border-accent/10">
       <h3 class="text-xl font-bold text-slate-900 mb-2">Let's Connect</h3>
       <p class="text-slate-600 mb-6">Interested in collaboration or have a question? Feel free to reach out!</p>
-      <a href="mailto:san.zhang@example.edu.cn" class="inline-block px-6 py-3 rounded-xl bg-accent text-white font-semibold hover:bg-accent-hover shadow-lg shadow-accent/20 transition-all hover:-translate-y-1">
+      <a href="mailto:litengyao@aliyun.com" class="inline-block px-6 py-3 rounded-xl bg-accent text-white font-semibold hover:bg-accent-hover shadow-lg shadow-accent/20 transition-all hover:-translate-y-1">
         Send an Email
       </a>
     </div>
