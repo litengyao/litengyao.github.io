@@ -203,17 +203,20 @@ const copyBibtex = (pub: Publication) => {
 
                 <!-- Actions -->
                 <div class="flex flex-wrap gap-3 pt-2">
-                  <a v-if="pub.pdf" :href="pub.pdf" target="_blank" @click.prevent="pub.pdf === '#' ? null : void 0"
+                  <a v-if="pub.pdf" :href="pub.pdf" target="_blank"
+                    @click="if (pub.pdf === '#') { $event.preventDefault(); }"
                     :class="{ 'pointer-events-none opacity-50 cursor-not-allowed': pub.pdf === '#' }"
                     class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium bg-slate-100 text-slate-700 hover:bg-accent hover:text-white transition-colors">
                     <DocumentTextIcon class="w-4 h-4" /> PDF
                   </a>
-                  <a v-if="pub.code" :href="pub.code" target="_blank" @click.prevent="pub.code === '#' ? null : void 0"
+                  <a v-if="pub.code" :href="pub.code" target="_blank"
+                    @click="if (pub.code === '#') { $event.preventDefault(); }"
                     :class="{ 'pointer-events-none opacity-50 cursor-not-allowed': pub.code === '#' }"
                     class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium bg-slate-100 text-slate-700 hover:bg-accent hover:text-white transition-colors">
                     <CodeBracketIcon class="w-4 h-4" /> Code
                   </a>
                   <a v-if="pub.link" :href="pub.link" target="_blank"
+                    @click="if (pub.link === '#') { $event.preventDefault(); }"
                     class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium bg-slate-100 text-slate-700 hover:bg-accent hover:text-white transition-colors">
                     <LinkIcon class="w-4 h-4" /> Project
                   </a>
