@@ -23,6 +23,13 @@ export function useNews() {
           date: "2026-03-07", 
           excerpt: "The site is a place for us to share our research progresses.",
           category: 'Others'
+        },
+        { 
+          id: 2, 
+          title: "We Published A New Paper About Website Fingerprinting", 
+          date: "2026-09-03", 
+          excerpt: "YI Zhengge, LI Tengyao, ZHANG Jingxi, MENG Yifei, LUO Xiangyang. Drift-Aware Adaptive Website Fingerprinting[J]. IEEE Transactions on Dependable and Secure Computing, 2026: 1-16.",
+          category: 'Papers'
         }      
       ]
       
