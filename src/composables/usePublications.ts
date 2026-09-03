@@ -396,7 +396,7 @@ export function usePublications() {
               type: "Journal",
               pdf: "https://doi.org/10.1016/j.comnet.2022.109424",
               code: "#",
-              highlight: false,
+              highlight: true,
               bibtex: `@article{liHeteroTiCRobustNetwork2022,
               title = {HeteroTiC: A Robust Network Flow Watermarking Based on Heterogeneous Time Channels},
               author = {Li, Tengyao and Liu, Kaiyue and Feng, Wangxin and Yang, Chunfang and Luo, Xiangyang},
@@ -583,7 +583,7 @@ export function usePublications() {
               type: "Journal",
               pdf: "https://doi.org/10.1016/j.cose.2025.104813",
               code: "#",
-              highlight: false,
+              highlight: true,
               bibtex: `@article{liSurveyonNetworkFlowWatermarking2026,
               title = {A Survey on Network Flow Watermarking: A Problem-Oriented Perspective},
               author = {Li, Tengyao and Liu, Kaiyue and Du, Shaoyong},
@@ -603,7 +603,7 @@ export function usePublications() {
               type: "Journal",
               pdf: "https://doi.org/10.1016/j.comnet.2026.112106",
               code: "#",
-              highlight: false,
+              highlight: true,
               bibtex: `@article{liSelfAdaptiveNetworkFlowWatermarking2026,
               title = {A Self-Adaptive Network Flow Watermarking with Robust Synchronization},
               author = {Li, Tengyao and Liu, Kaiyue and Ding, Shichang and Yang, Chunfang and Luo, Xiangyang},
@@ -612,6 +612,25 @@ export function usePublications() {
               volume = {278},
               pages = {112106},
               doi = {10.1016/j.comnet.2026.112106}
+              }`
+      },
+      {
+              id: 30,
+              title: "Drift-Aware Adaptive Website Fingerprinting",
+              authors: ["Zhengge Yi", "Tengyao Li", "Jingxi Zhang", "Yifei Meng", "Xiangyang Luo"],
+              venue: "IEEE Transactions on Dependable and Secure Computing",
+              year: 2026,
+              type: "Journal",
+              pdf: "https://doi.org/10.1109/TDSC.2026.3723526",
+              code: "#",
+              highlight: false,
+              bibtex: `@article{yiDriftAwareAdaptiveWebsiteFingerprinting2026,
+              title = {Drift-Aware Adaptive Website Fingerprinting},
+              author = {Yi, Zhengge and Li, Tengyao and Zhang, Jingxi and Meng, Yifei and Luo, Xiangyang},
+              year = 2026,
+              journal = {IEEE Transactions on Dependable and Secure Computing},
+              pages = {1--16},
+              doi = {10.1109/TDSC.2026.3723526}
               }`
       }
       ]
